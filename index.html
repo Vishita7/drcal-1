@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demand Response Calculator</title>
+    <!-- Style sheet-->
+    <link href="css/bootstrap-5.3.2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap-4.5.2.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!--JavaScript -->
+    <script src="js/jquery-3.5.1.slim.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+    <header class="bg-light text-center">
+        <img src="https://live.staticflickr.com/65535/53470217778_9c919c288f_b.jpg" alt="Logo" class="img-fluid">
+    </header>
+    <main>
+        <!-- Navigation Bar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <!-- The About link -->
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#" data-bs-toggle="modal"
+                                data-bs-target="#aboutModal">About</a>
+                        </li>
+                        <!-- The Demand response programs link -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-bs-toggle="modal"
+                                data-bs-target="#demandResponseProgramsModal">Demand Response Programs</a>
+                        </li>
+                        <!-- The FAQ link -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-bs-toggle="modal"
+                                data-bs-target="#faqModal">Calculation</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- About Modal -->
+            <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">About</h4>
+                            <a href="https://www.nyc.gov/site/dcas/agencies/demand-response.page" target="_blank"
+                                rel="noopener"
+                                style="font-size:x-small; color: #333; background-color: rgb(221, 245, 221); padding: 5px; border-radius: 50%; font-weight: bolder;">i</a>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <article class="card-text mt-3">
+                                The New York City Division of Energy Management (DEM) is at the forefront of
+                                pioneering
+                                demand response programs that significantly contribute to the city's
+                                environmental and
+                                energy efficiency goals. By engaging city agencies to reduce energy usage
+                                during peak
+                                times, DEM plays a crucial role in lowering emissions, enhancing grid
+                                reliability, and
+                                managing energy accounts with a focus on sustainability and operational
+                                efficiency.<br><br>The DR Program is a cornerstone in New York City's environmental
+                                strategy, achieving
+                                multiple objectives:
+                                <ul>
+                                    <li>Substantial emission reductions</li>
+                                    <li>Significant energy cost savings through lowered demand charges and revenue
+                                        generation</li>
+                                    <li>Enhanced grid reliability, mitigating the risks of blackouts and brownouts</li>
+                                    <li>Minimization of reliance on inefficient and polluting backup power plants</li>
+                                </ul>
+
+                                With initiatives launched in 2013, DEM has successfully harnessed the
+                                collective power
+                                of city agencies to not only decrease energy consumption but also generate
+                                substantial
+                                revenue, leading to over $100 million earned from 2013 to 2021. This
+                                concerted effort
+                                underscores a commitment to not just energy savings but also to a greener,
+                                more
+                                resilient New York City.<br><br>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Demand Response Programs Modal -->
+            <div class="modal fade" id="demandResponseProgramsModal" tabindex="-1"
+                aria-labelledby="demandResponseProgramsModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Demand Response Programs</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- Inserted demand response programs content here -->
+                            <div id="demandResponsePrograms">
+                                <p>New York City's strategic energy management includes a suite of Demand Response
+                                    Programs aimed at managing energy demand, enhancing grid reliability, and promoting
+                                    sustainable energy consumption practices. These initiatives are crucial for
+                                    supporting the city's energy infrastructure, offering businesses and institutions a
+                                    pivotal role in this endeavor while availing themselves of potential financial
+                                    incentives.
+                                </p>
+                                <h5>Key Programs</h5><br>
+                                <ul>
+                                    <li>
+                                        <!-- ConEd Commercial System Relief Program (CSRP) -->
+                                        <h6>ConEd Commercial System Relief Program (CSRP)
+                                            <a href="https://www.coned.com/en/save-money/rebates-incentives-tax-credits/rebates-incentives-tax-credits-for-commercial-industrial-buildings-customers/smart-usage-rewards"
+                                                target="_blank" rel="noopener"
+                                                style="font-size:x-small; color: #333; background-color: rgb(221, 245, 221); padding: 5px; border-radius: 50%; font-weight: bolder;"
+                                                title="Click here to know more">i</a>
+                                        </h6>
+                                        <div id="csrpInfo" style="margin-top: auto; padding: 10px; text-align: left;">
+                                            <p>
+                                                The CSRP is a seasonal initiative running from May 1 to September 30,
+                                                aimed
+                                                at
+                                                reducing peak network demand. It incentivizes customers to lower their
+                                                energy
+                                                usage during specified call windows. Participants are alerted 21 hours
+                                                in
+                                                advance of an event and receive a final confirmation 2 hours before it
+                                                begins.
+                                                Events, which are typically scheduled for 4-6 hours, ensure that if no
+                                                actual or
+                                                emergency events have occurred, a mandatory test event of one hour will
+                                                be
+                                                implemented to maintain preparedness.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <h6>ConEd Distribution Load Relief Program (DLRP)
+                                            <a href="https://www.coned.com/en/save-money/rebates-incentives-tax-credits/rebates-incentives-tax-credits-for-commercial-industrial-buildings-customers/smart-usage-rewards"
+                                                target="_blank" rel="noopener"
+                                                style="font-size:x-small; color: #333; background-color: rgb(221, 245, 221); padding: 5px; border-radius: 50%; font-weight: bolder;"
+                                                title="Click here to know more">i</a>
+                                        </h6>
+
+                                        <div id="dlrpInfo" style="margin-top: auto; padding: 10px; text-align: left;">
+                                            <p>
+                                                Available during the same period as CSRP, the DLRP seeks to offer
+                                                network-level
+                                                support by encouraging load reduction during potential contingency
+                                                events
+                                                that
+                                                could lead to outages or equipment overload. Notifications are sent out
+                                                2
+                                                hours
+                                                before an event, with the stipulation that events are not scheduled
+                                                between
+                                                midnight and 6 am. Emergency events last for 4 hours, while test events
+                                                are
+                                                designed to last for 2 hours, ensuring participants are always ready to
+                                                contribute to grid stability.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <h6>NYISO Special Case Resources Program (SCR)
+                                            <a href="https://www.nyiso.com/documents/20142/1398619/NYISO-Demand-Response-FAQs-for-Prospective-Resources.pdf/0377863d-84a6-de03-7486-f98e23f631e5"
+                                                target="_blank" rel="noopener"
+                                                style="font-size:x-small; color: #333; background-color: rgb(221, 245, 221); padding: 5px; border-radius: 50%; font-weight: bolder;"
+                                                title="Click here to know more">i</a>
+                                        </h6>
+
+                                        <div id="scrInfo" style="margin-top: auto; padding: 10px; text-align: left;">
+                                            <p>
+                                                The SCR Demand Response program caters to NYISO transmission zone
+                                                customers
+                                                equipped with hourly interval meters who can commit to reducing at least
+                                                100 kW
+                                                of load. This program aims to bolster power grid reliability by
+                                                mandating load
+                                                curtailment during periods of high demand. Like CSRP, participants
+                                                receive a
+                                                21-hour advance notice and a 2-hour prior confirmation to the event,
+                                                which lasts
+                                                between 4-6 hours. With two 6-month capability periods (summer and
+                                                winter) and a
+                                                month-to-month rolling enrollment, full participation in each period is
+                                                advised
+                                                to maximize program benefits.
+                                            </p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Modal -->
+            <div class="modal fade" id="faqModal" tabindex="-1" aria-labelledby="faqModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" style="text-align: center;">Calculations and Parameters </h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="card mb-2">
+                                <div class="card-header bg-light text-dark  text-center fs-6">ConEd Program Revenue
+                                    Calculations:</div>
+                                <div class="card-body bg-light">
+                                    <p class="card-text text-center fs-6">
+                                        <strong>Capacity Revenue</strong>
+                                    <div style="padding-left: 2em;text-align: center">
+                                        Commitment (Kw) x 5 months x Capacity Rate ($/Kw/month)
+                                    </div>
+                                    <p class="card-text text-center fs-6">
+                                        <strong>Energy Revenue</strong>
+                                    <div style="padding-left: 2em;text-align: center">Commitment (Kw) x
+                                        Event Hours x Energy Rate
+                                        ($/Kwh)<br></div>
+                                    </p>
+                                    <p class="card-text text-center fs-6">
+                                        <strong>Gross Revenue</strong>
+                                    <div style="padding-left: 2em;text-align: center"> Capacity Revenue +
+                                        Energy Revenue</div>
+                                    </p>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card mb-2">
+                                <div class="card-header bg-light text-dark  text-center fs-6">NYISO SCR Program Revenue
+                                    Calculations:</div>
+                                <div class="card-body bg-light">
+                                    <p class="card-text text-center fs-6">
+                                        <strong>Capacity Revenue</strong>
+                                    <div style="padding-left: 2em;text-align: center;">Commitment (Kw) x
+                                        6 Months x Capacity Rate
+                                        ($/Kw/month) x Duration Adjustment Factor (0.9)</div>
+                                    </p>
+                                </div>
+                            </div>
+                            <h5 class="mt-3 mb-1 text-center fs-5">Terms</h5>
+                            <div class="card">
+                                <div class="card-body bg-light">
+                                    <p class="card-text text-center fs-6">
+                                        <strong>Commitment</strong>
+                                    <div style="padding-left: 2em;text-align: center;">The amount of load you commit to
+                                        reduce during an event
+                                        (in Kw).</div>
+                                    <br>
+                                    <p class="card-text text-center fs-6">
+                                        <strong>Capacity Rate</strong>
+                                    <div style="padding-left: 2em;text-align: center;">The rewards programs pay for load
+                                        curtailment (in
+                                        $/Kw/month).</div>
+                                    </p><br>
+                                    <p class="card-text text-center fs-6">
+                                        <strong>Energy Rate</strong>
+                                    <div style="padding-left: 2em;">The rate programs pay for reducing load during the
+                                        event
+                                        (in $/KWh).</div>
+                                    </p><br>
+                                    <p class="card-text text-center fs-6">
+                                        <strong>Event Hours</strong>
+                                    <div style="padding-left: 2em;"> The duration of event or test events in hours.
+                                    </div>
+                                    </p>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- Calculator -->
+        <div class="container-fluid">
+            <div class="row mt-3">
+                <div class="col-sm-4 col-md-4 col-lg-3">
+                    <div class="card-body bg-light-green">
+                        <p class="card-text text-md-start" style="font-size: 1em;">
+                            <strong> Revenue calculator</strong> is designed to help estimate
+                            potential gross revenue and CO2e emissions savings from participation in demand response
+                            programs. It accommodates three distinct programs and offers two modes:
+                        <ul>
+                            <li>A default mode for a quick overview of maximum revenue</li>
+                            <li>A customized mode for in-depth estimations tailored to individual inputs such as:</li>
+                            <ul>
+                                <li>Location based rates</li>
+                                <li>Event specifics</li>
+                            </ul>
+                        </ul>
+                        <br>The calculator is intended to provide a general idea of potential revenue and CO2e
+                        emissions savings. Actual results may vary based on a variety of factors, including but not
+                        limited to, actual performance, program rules, and market rates.It is recommended to consult
+                        with a professional for a more accurate estimate.
+                        <br><br> For more
+                        details
+                        or assistance, reach out at: <a href="mailto:drteam@dcas.nyc.gov"
+                            class="link-primary">drteam@dcas.nyc.gov</a>.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-9 offset-sm-0">
+                    <div class="container mt-0">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title text-center offset-sm-1">Revenue Calculator</h5>
+                                <div class="toggle-container text-center offset-sm-1">
+                                    <span class="form-label" data-bs-toggle="tooltip" data-bs-html="true"
+                                        title="Enter kW commitment into our calculator to view estimated earnings from each program.">Simplified</span>
+                                    <div class="toggle-button">
+                                        <input class="toggle-input" id="toggle" type="checkbox">
+                                        <label class="toggle-label" for="toggle"></label>
+                                    </div>
+                                    <span class="form-label" data-bs-toggle="tooltip" data-bs-html="true"
+                                        title="Enter your facility's detailed information into our calculator to view estimated earnings from each program.">Detailed</span>
+                                </div>
+                                <!--  FORM-2(Simple Form)-->
+                                <form id="form2" class="mt-4 ">
+                                    <div class="mb-3 row">
+                                        <label for="input1" class="col-md-4 col-form-label text-md-end"
+                                            data-bs-toggle="tooltip" data-bs-html="true"
+                                            title="Load reduction in kw">Enter
+                                            Commitment</label>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="input1"
+                                                placeholder="Enter commitment (kw)">
+                                        </div>
+                                    </div>
+                                    <div class="text-center">
+                                        <button type="button" class="btn btn-primary" onclick="calculate()">Calculate
+                                            Revenue</button>
+                                    </div>
+                                    <!-- Total Results -->
+                                    <div id="totalResultContainerF1" class="row justify-content-center mt-4"
+                                        style="display: none;">
+                                        <div class="col-12 mb-3">
+                                            <div class="total-results-summary text-center">
+                                                <div class="d-flex justify-content-center align-items-center">
+                                                    <h5 class="me-2">Maximum Revenue:</h5><span
+                                                        class="fw-bold fs-5">$</span><span id="totalRevenueDisplayF1"
+                                                        class="fw-bold fs-5"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Individual Results -->
+                                    <div id="resultContainerF1" class="row justify-content-center mt-4">
+                                        <!-- Cards will be dynamically inserted here by the calculate() function -->
+                                    </div>
+                                </form>
+                                <!-- FORM-!(Customized Form) -->
+                                <form id="form1" class="mt-4" style="display:none">
+                                    <div class="row align-items-center justify-content-center my-3 m-3">
+                                        <div class="row align-items-center">
+                                            <div class="col-12 col-md-auto my-5">
+                                                <h6 class="form-text mb-0" style="font-weight: bold;">Choose
+                                                    Capability
+                                                    Period:</h6>
+                                            </div>
+                                            <div class="col-12 col-md my-5">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="capabilityPeriod"
+                                                        id="summer" value="summer">
+                                                    <label class="form-check-label" for="summer">Summer</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md my-5">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="capabilityPeriod"
+                                                        id="winter" value="winter">
+                                                    <label class="form-check-label" for="winter">Winter</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md my-5">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="capabilityPeriod"
+                                                        id="both" value="both">
+                                                    <label class="form-check-label" for="both">Both</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="programSelect" style="display: none;" class="row align-items-center">
+                                            <!-- ConEd CSRP -->
+                                            <div class="container" name="ProgramDiv" id="CSRP" style="display: none;">
+                                                <div class="row my-3">
+                                                    <!-- Program Name -->
+                                                    <div class="col-12 text-center my-3">
+                                                        <h5 data-bs-toggle="tooltip" data-bs-html="true"
+                                                            title="Commercial System Relief Program<br>Period:&nbsp;May 1&nbsp;–&nbsp;Sep 30">
+                                                            ConEd CSRP
+                                                        </h5>
+                                                    </div>
+                                                    <!-- location Select Box -->
+                                                    <div class="col-12 col-md-6 col-lg-4">
+                                                        <select id="locationSelect1" class="form-control">
+                                                            <option value="">Select Facility Location</option>
+                                                            <option value="location1">Brooklyn, Bronx, Manhattan,
+                                                                and Queens
+                                                            </option>
+                                                            <option value="location2">Westchester County & Staten
+                                                                Island
+                                                            </option>
+                                                        </select>
+                                                    </div>
+                                                    <!-- Event Hours Select Box -->
+                                                    <div class="col-12 col-md-6 col-lg-4">
+                                                        <select id="eventHoursSelect1" class="form-control"
+                                                            onchange="toggleEventHoursInput(this.value, 'customBox1')">
+                                                            <option value="">Select Event Hours</option>
+                                                            <option value="default">Test Event (1 Hour)</option>
+                                                            <option value="custom">Custom
+                                                                event hours</option>
+                                                        </select>
+                                                        <input type="number" id="customBox1" class="form-control"
+                                                            style="display: none;" placeholder="Enter Event Hours">
+                                                    </div>
+                                                    <!-- Commitment Input -->
+                                                    <div class="col-12 col-md-6 col-lg-4">
+                                                        <input type="number" id="commitmentInput" class="form-control"
+                                                            placeholder="Enter Commitment">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- ConEd DLRP -->
+                                            <div class="container" name="ProgramDiv" id="DLRP" style="display: none;">
+                                                <div class="row my-3">
+                                                    <!-- Program Name -->
+                                                    <div class="col-12 text-center my-3">
+                                                        <h5 data-bs-toggle="tooltip" data-bs-html="true"
+                                                            title="Distribution Load Relief Program<br>Period:&nbsp;May 1&nbsp;–&nbsp;Sep 30">
+                                                            ConEd DLRP
+                                                        </h5>
+                                                    </div>
+                                                    <!-- location Select Box -->
+                                                    <div class="col-12 col-md-6 col-lg-4">
+                                                        <select id="locationSelect2" class="form-control">
+                                                            <option value="">Select Network Tier</option>
+                                                            <option value="location1">Tier-1 Or I don't know the
+                                                                Network
+                                                                Tier</option>
+                                                            <option value="location2">Tier-2 Network</option>
+                                                        </select>
+                                                    </div>
+                                                    <!-- Event Hours Select Box -->
+                                                    <div class="col-12 col-md-6 col-lg-4">
+                                                        <select id="eventHoursSelect2" class="form-control"
+                                                            onchange="toggleEventHoursInput(this.value, 'customBox2')">
+                                                            <option value="">Select Event Hours</option>
+                                                            <option value="default">Test
+                                                                Event (2 Hours)</option>
+                                                            <option value="custom">Custom
+                                                                event hours</option>
+                                                        </select>
+                                                        <input type="number" id="customBox2" class="form-control"
+                                                            style="display: none;" placeholder="Enter Event Hours">
+                                                    </div>
+                                                    <!-- Commitment Input -->
+                                                    <div class="col-12 col-md-6 col-lg-4">
+                                                        <input type="number" id="commitmentInput2" class="form-control"
+                                                            placeholder="Enter Commitment">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- SCR SUMMER -->
+                                            <div class="container" name="ProgramDiv" id="SCRS" style="display: none;">
+                                                <div class="row my-3">
+                                                    <!-- Program Name -->
+                                                    <div class="col-12 text-center my-3">
+                                                        <h5 data-bs-toggle="tooltip" data-bs-html="true"
+                                                            title="Special Case Resources<br>Period:&nbsp;May 1&nbsp;–&nbsp;Oct 31">
+                                                            NYISO SCR (Summer)
+                                                        </h5>
+                                                    </div>
+                                                    <!-- location Select Box -->
+                                                    <div class="col-12 col-md-6 col-lg-4">
+                                                        <select id="locationSelect3" class="form-control"
+                                                            onchange="toggleEventHoursInput(this.value, 'customBox3')">
+                                                            <option value="">Select Capacity Rate</option>
+                                                            <option value="location1">Summer
+                                                                2023 Auction Price</option>
+                                                            <option value="custom">Enter Custom Rate</option>
+                                                        </select>
+                                                        <input type=" number" id="customBox3" class="form-control"
+                                                            style="display: none;" placeholder="Enter custom rate">
+                                                    </div>
+                                                    <!-- Event Hours Select Box -->
+                                                    <div class="col-12 col-md-6 col-lg-4">
+                                                        <select id="eventHoursSelect3" class="form-control">
+                                                            <option value="">Select Event Hours</option>
+                                                            <option value="default">Test Event (1 Hour)</option>
+                                                        </select>
+                                                    </div>
+                                                    <!-- Commitment Input -->
+                                                    <div class="col-12 col-md-6 col-lg-4">
+                                                        <input type="number" id="commitmentInput3" class="form-control"
+                                                            placeholder="Enter Commitment">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- SCR Winter -->
+                                            <div class="container" name="ProgramDiv" id="SCRW" style="display: none;">
+                                                <div class="row my-3">
+                                                    <!-- Program Name -->
+                                                    <div class="col-12 text-center my-3">
+                                                        <h5 data-bs-toggle="tooltip" data-bs-html="true"
+                                                            title="Special Case Resources<br>Period:&nbsp;Nov 1&nbsp;–&nbsp;Apr 30">
+                                                            NYISO SCR (Winter)
+                                                        </h5>
+                                                    </div>
+                                                    <!-- location Select Box -->
+                                                    <div class="col-12 col-md-6 col-lg-4">
+                                                        <select id="locationSelect4" class="form-control"
+                                                            onchange="toggleEventHoursInput(this.value, 'customBox4')">
+                                                            <option value="">Select Capacity Rate</option>
+                                                            <option value="location1">Winter 2023 Auction Price</option>
+                                                            <option value="custom">Enter Custom Rate</option>
+                                                        </select>
+                                                        <input type="number" id="customBox4" class="form-control"
+                                                            style="display: none;" placeholder="Enter custom rate">
+                                                    </div>
+                                                    <!-- Event Hours Select Box -->
+                                                    <div class="col-12 col-md-6 col-lg-4">
+                                                        <select id="eventHoursSelect4" class="form-control">
+                                                            <option value="">Select Event Hours</option>
+                                                            <option value="default">Test
+                                                                Event (1
+                                                                Hour)</option>
+                                                        </select>
+                                                    </div>
+                                                    <!-- Commitment Input -->
+                                                    <div class="col-12 col-md-6 col-lg-4">
+                                                        <input type="number" id="commitmentInput4" class="form-control"
+                                                            placeholder="Enter Commitment">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Calculate Button -->
+                                            <div class="container" name="ProgramDiv" id="total-button-container"
+                                                style="display: none;">
+                                                <div class="row">
+                                                    <div class="col-12 text-center my-3">
+                                                        <button id="total-button" type="button" class="btn btn-primary"
+                                                            onclick="calculateTotalRevenue()" data-bs-toggle="tooltip"
+                                                            data-bs-html="true"
+                                                            title="Capacity Revenue + Energy Revenue">Calculate Total
+                                                            Revenue</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="container my-4" id="totalResultContainer"
+                                                style="display: none;">
+                                                <div class="row">
+                                                    <!-- Summary of Total Results -->
+                                                    <div class="col-12 mb-3">
+                                                        <div class="total-results-summary text-center">
+                                                            <div
+                                                                class="d-flex justify-content-center align-items-center">
+                                                                <h5 class="me-2">Total Revenue:</h5><span
+                                                                    class="fw-bold fs-5">$</span><span
+                                                                    id="totalRevenueDisplay"
+                                                                    class="fw-bold  fs-5 "></span>
+                                                            </div>
+                                                            <div
+                                                                class="d-flex justify-content-center align-items-center">
+                                                                <h5 class="me-2">Total CO2 Emissions:</h5>
+                                                                <span id="totalCO2Display" class="fw-bold fs-5"></span>
+                                                                <!-- <span class="fw-bold fs-5"> mtCO2e</span> -->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Individual Results Displayed in Cards -->
+                                                    <div class="col-12">
+                                                        <div class="row" id="individualResultsCards">
+                                                            <!-- Individual results will be displayed here -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer <div class="bg-light" style="text-align: right; font-size: 0.8em;">
+        <p class="text-secondary">© 2024 NYC Department of Citywide Administrative Services</p>
+</body>

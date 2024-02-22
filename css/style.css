@@ -1,0 +1,153 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+    background-color: rgba(249, 253, 249, 0.7);
+}
+
+header img {
+    width: 100%;
+    height: auto;
+}
+
+.navbar {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /* background-color: rgba(218, 251, 218, 0.7); */
+}
+
+.nav-item a:hover {
+    color: black !important;
+
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: rgba(249, 253, 249, 0.7);
+}
+
+.tooltip .tooltip-inner {
+    background-color: rgb(113, 190, 113);
+    forced-color-adjust: auto;
+}
+
+.tooltip .arrow::before {
+    border-top-color: black;
+}
+
+
+.bg-light-green {
+    background-color: rgba(218, 251, 218, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+
+}
+
+.card-text {
+    font-size: 1.1em;
+    line-height: 1.6;
+    text-align: justify;
+    text-justify: inter-cluster;
+}
+
+.text-center {
+    /* text-align: center; */
+    font-weight: bolder;
+    font-size: 2em;
+
+}
+
+.text-align {
+    text-align: center;
+    font-weight: bold;
+    /* make heading bold */
+}
+
+.sub-title {
+    display: inline-block;
+    /* ensure "Energy Management" fits in a row */
+}
+
+.form-label {
+    font-size: 0.8rem;
+    font-weight: bold;
+    font-stretch: condensed;
+
+}
+
+.toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.form-label {
+    font-size: 1rem;
+}
+
+.toggle-button {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.toggle-button input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-label {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 30px;
+    background-color: rgba(182, 247, 182, 0.7);
+    width: 40px;
+    height: 18px;
+}
+
+.toggle-label:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+.toggle-input:checked+.toggle-label {
+    background-color: rgba(122, 145, 249, 0.7);
+}
+
+.toggle-input:checked+.toggle-label:before {
+    transform: translateX(20px);
+
+}
+
+.result-message {
+    text-align: center;
+    color: #6c757d;
+    /* This is the color for .text-secondary in Bootstrap */
+    font-size: 1.25rem;
+    /* This is equivalent to .fs-5 in Bootstrap 5 */
+    margin-top: 1rem;
+    /* This is equivalent to .my-3 in Bootstrap */
+    margin-bottom: 1rem;
+    /* This is equivalent to .my-3 in Bootstrap */
+}
