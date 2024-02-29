@@ -32,11 +32,17 @@ header img {
 .tooltip .tooltip-inner {
     background-color: rgb(113, 190, 113);
     forced-color-adjust: auto;
+    max-width: none;
+    white-space: nowrap;
 }
 
 .tooltip .arrow::before {
-    border-top-color: black;
+    border-top-color: rgb(113, 190, 113);
 }
+
+/* .tooltip .arrow::before {
+    border-top-color: black;
+} */
 
 
 .bg-light-green {

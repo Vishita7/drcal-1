@@ -257,7 +257,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Helper function to calculate revenue and CO2 emissions for a given program
     function calculateProgramRevenue(program, locationSelectId, eventHoursSelectId, customBoxId, commitmentInputId, months) {
         const ENERGY_RATE = 1; // $/kw
-        const CO2_EMISSION_FACTOR = 100 * 0.00030713; // CO2 emission factor
+        const CO2_EMISSION_FACTOR = 0.0003231650; // CO2 emission factor
 
         var locationRate = getLocationRate(locationSelectId, program);
         var eventHours = getEventHours(eventHoursSelectId, customBoxId, program);

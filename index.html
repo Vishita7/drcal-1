@@ -187,15 +187,18 @@
                                                 100 kW
                                                 of load. This program aims to bolster power grid reliability by
                                                 mandating load
-                                                curtailment during periods of high demand. Like CSRP, participants
-                                                receive a
-                                                21-hour advance notice and a 2-hour prior confirmation to the event,
-                                                which lasts
-                                                between 4-6 hours. With two 6-month capability periods (summer and
-                                                winter) and a
-                                                month-to-month rolling enrollment, full participation in each period is
-                                                advised
-                                                to maximize program benefits.
+                                                <<<<<<< HEAD curtailment during periods of high demand. Like CSRP,
+                                                    participants=======curtailment during periods of high demand.
+                                                    Participants>>>>>>> e9b481336c5b7b278041530e0b07f0210928812b
+                                                    receive a
+                                                    21-hour advance notice and a 2-hour prior confirmation to the event,
+                                                    which lasts
+                                                    between 4-6 hours. With two 6-month capability periods (summer and
+                                                    winter) and a
+                                                    month-to-month rolling enrollment, full participation in each period
+                                                    is
+                                                    advised
+                                                    to maximize program benefits.
                                             </p>
                                         </div>
                                     </li>
@@ -222,13 +225,21 @@
                                     <p class="card-text text-center fs-6">
                                         <strong>Capacity Revenue</strong>
                                     <div style="padding-left: 2em;text-align: center">
-                                        Commitment (Kw) x 5 months x Capacity Rate ($/Kw/month)
+                                        <<<<<<< HEAD Commitment (Kw) x 5 months x Capacity Rate ($/Kw/month) </div>
+                                            <p class="card-text text-center fs-6">
+                                                <strong>Energy Revenue</strong>
+                                            <div style="padding-left: 2em;text-align: center">Commitment (Kw) x
+                                                Event Hours x Energy Rate
+                                                ($/Kwh)<br></div>
+                                            =======
+                                            Commitment (kW) x 5 months x Capacity Rate ($/kW/month)
                                     </div>
                                     <p class="card-text text-center fs-6">
                                         <strong>Energy Revenue</strong>
-                                    <div style="padding-left: 2em;text-align: center">Commitment (Kw) x
+                                    <div style="padding-left: 2em;text-align: center">Commitment (kW) x
                                         Event Hours x Energy Rate
-                                        ($/Kwh)<br></div>
+                                        ($/KWh)<br></div>
+                                    >>>>>>> e9b481336c5b7b278041530e0b07f0210928812b
                                     </p>
                                     <p class="card-text text-center fs-6">
                                         <strong>Gross Revenue</strong>
@@ -250,35 +261,53 @@
                                     </p>
                                 </div>
                             </div>
-                            <h5 class="mt-3 mb-1 text-center fs-5">Terms</h5>
-                            <div class="card">
-                                <div class="card-body bg-light">
-                                    <p class="card-text text-center fs-6">
-                                        <strong>Commitment</strong>
-                                    <div style="padding-left: 2em;text-align: center;">The amount of load you commit to
-                                        reduce during an event
-                                        (in Kw).</div>
-                                    <br>
-                                    <p class="card-text text-center fs-6">
-                                        <strong>Capacity Rate</strong>
-                                    <div style="padding-left: 2em;text-align: center;">The rewards programs pay for load
-                                        curtailment (in
-                                        $/Kw/month).</div>
-                                    </p><br>
-                                    <p class="card-text text-center fs-6">
-                                        <strong>Energy Rate</strong>
-                                    <div style="padding-left: 2em;">The rate programs pay for reducing load during the
-                                        event
-                                        (in $/KWh).</div>
-                                    </p><br>
-                                    <p class="card-text text-center fs-6">
-                                        <strong>Event Hours</strong>
-                                    <div style="padding-left: 2em;"> The duration of event or test events in hours.
+                            <<<<<<< HEAD <h5 class="mt-3 mb-1 text-center fs-5">Terms</h5>
+                                =======
+                                <!-- add acard for commitment x # of hours of events x  (assuming 100% performance) x 0.0003231650 -->
+                                <div class="card mb-2">
+                                    <div class="card-header bg-light text-dark  text-center fs-6">CO2 Emissions Savings
+                                        Calculations:</div>
+                                    <div class="card-body bg-light">
+                                        <p class="card-text text-center fs-6">
+                                            <strong>CO<sub>2</sub> Emissions Savings</strong>
+                                        <div style="padding-left: 2em;text-align: center;">Commitment (Kw) x
+                                            Event Hours x 0.0003231650 x Performance (assuming 100% performance)</div>
+                                        </p>
                                     </div>
-                                    </p>
-                                    </p>
                                 </div>
-                            </div>
+                                <h5 class="mt-3 mb-1 text-center fs-5">Parameters</h5>
+                                >>>>>>> e9b481336c5b7b278041530e0b07f0210928812b
+                                <div class="card">
+                                    <div class="card-body bg-light">
+                                        <p class="card-text text-center fs-6">
+                                            <strong>Commitment</strong>
+                                        <div style="padding-left: 2em;text-align: center;">The amount of load you commit
+                                            to
+                                            reduce during an event
+                                            (in Kw).</div>
+                                        <br>
+                                        <p class="card-text text-center fs-6">
+                                            <strong>Capacity Rate</strong>
+                                        <div style="padding-left: 2em;text-align: center;">The rewards programs pay for
+                                            load
+                                            curtailment (in
+                                            $/Kw/month).</div>
+                                        </p><br>
+                                        <p class="card-text text-center fs-6">
+                                            <strong>Energy Rate</strong>
+                                        <div style="padding-left: 2em;">The rate programs pay for reducing load during
+                                            the
+                                            event
+                                            (in $/KWh).</div>
+                                        </p><br>
+                                        <p class="card-text text-center fs-6">
+                                            <strong>Event Hours</strong>
+                                        <div style="padding-left: 2em;"> The duration of event or test events in hours.
+                                        </div>
+                                        </p>
+                                        </p>
+                                    </div>
+                                </div>
                         </div>
 
                     </div>
@@ -292,24 +321,36 @@
                     <div class="card-body bg-light-green">
                         <p class="card-text text-md-start" style="font-size: 1em;">
                             <strong> Revenue calculator</strong> is designed to help estimate
-                            potential gross revenue and CO2e emissions savings from participation in demand response
-                            programs. It accommodates three distinct programs and offers two modes:
-                        <ul>
-                            <li>A default mode for a quick overview of maximum revenue</li>
-                            <li>A customized mode for in-depth estimations tailored to individual inputs such as:</li>
-                            <ul>
-                                <li>Location based rates</li>
-                                <li>Event specifics</li>
-                            </ul>
-                        </ul>
-                        <br>The calculator is intended to provide a general idea of potential revenue and CO2e
-                        emissions savings. Actual results may vary based on a variety of factors, including but not
-                        limited to, actual performance, program rules, and market rates.It is recommended to consult
-                        with a professional for a more accurate estimate.
-                        <br><br> For more
-                        details
-                        or assistance, reach out at: <a href="mailto:drteam@dcas.nyc.gov"
-                            class="link-primary">drteam@dcas.nyc.gov</a>.
+                            <<<<<<< HEAD potential gross revenue and CO2e emissions savings from participation in demand
+                                response programs. It accommodates three distinct programs and offers two modes: <ul>
+                                <li>A default mode for a quick overview of maximum revenue</li>
+                                <li>A customized mode for in-depth estimations tailored to individual inputs such as:
+                                </li>
+                                =======
+                                potential gross revenue and CO<sub>2</sub> emissions savings from participation in
+                                demand response
+                                programs. It accommodates three distinct programs and offers two modes:
+                                <ul>
+                                    <li>Simplified calculator is default mode for a quick overview of maximum revenue
+                                    </li>
+                                    <li>Detailed calculator is customized mode for in-depth estimations tailored to
+                                        individual inputs such as:</li>
+                                    >>>>>>> e9b481336c5b7b278041530e0b07f0210928812b
+                                    <ul>
+                                        <li>Location based rates</li>
+                                        <li>Event specifics</li>
+                                    </ul>
+                                </ul>
+                                <br>The calculator is intended to provide a general idea of potential revenue and CO2e
+                                emissions savings. Actual results may vary based on a variety of factors, including but
+                                not
+                                limited to, actual performance, program rules, and market rates.It is recommended to
+                                consult
+                                with a professional for a more accurate estimate.
+                                <br><br> For more
+                                details
+                                or assistance, reach out at: <a href="mailto:drteam@dcas.nyc.gov"
+                                    class="link-primary">drteam@dcas.nyc.gov</a>.
                         </p>
                     </div>
                 </div>
@@ -319,14 +360,22 @@
                             <div class="card-body">
                                 <h5 class="card-title text-center offset-sm-1">Revenue Calculator</h5>
                                 <div class="toggle-container text-center offset-sm-1">
-                                    <span class="form-label" data-bs-toggle="tooltip" data-bs-html="true"
+                                    <span class="form-label" data-bs-toggle="tooltip" data-bs-html="true" <<<<<<< HEAD
                                         title="Enter kW commitment into our calculator to view estimated earnings from each program.">Simplified</span>
+                                    =======
+                                    title="Enter kW commitment into calculator to view estimated earnings for each
+                                    program.">Simplified</span>
+                                    >>>>>>> e9b481336c5b7b278041530e0b07f0210928812b
                                     <div class="toggle-button">
                                         <input class="toggle-input" id="toggle" type="checkbox">
                                         <label class="toggle-label" for="toggle"></label>
                                     </div>
-                                    <span class="form-label" data-bs-toggle="tooltip" data-bs-html="true"
+                                    <span class="form-label" data-bs-toggle="tooltip" data-bs-html="true" <<<<<<< HEAD
                                         title="Enter your facility's detailed information into our calculator to view estimated earnings from each program.">Detailed</span>
+                                    =======
+                                    title="Enter your facility's detailed information into calculator to view estimated
+                                    earnings for each program.">Detailed</span>
+                                    >>>>>>> e9b481336c5b7b278041530e0b07f0210928812b
                                 </div>
                                 <!--  FORM-2(Simple Form)-->
                                 <form id="form2" class="mt-4 ">
@@ -567,18 +616,38 @@
                                                     <!-- Summary of Total Results -->
                                                     <div class="col-12 mb-3">
                                                         <div class="total-results-summary text-center">
-                                                            <div
+                                                            <<<<<<< HEAD <div
                                                                 class="d-flex justify-content-center align-items-center">
                                                                 <h5 class="me-2">Total Revenue:</h5><span
                                                                     class="fw-bold fs-5">$</span><span
                                                                     id="totalRevenueDisplay"
                                                                     class="fw-bold  fs-5 "></span>
-                                                            </div>
-                                                            <div
-                                                                class="d-flex justify-content-center align-items-center">
-                                                                <h5 class="me-2">Total CO2 Emissions:</h5>
-                                                                <span id="totalCO2Display" class="fw-bold fs-5"></span>
-                                                                <!-- <span class="fw-bold fs-5"> mtCO2e</span> -->
+                                                        </div>
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <h5 class="me-2">Total CO2 Emissions:</h5>
+                                                            <span id="totalCO2Display" class="fw-bold fs-5"></span>
+                                                            <!-- <span class="fw-bold fs-5"> mtCO2e</span> -->
+                                                            =======
+                                                            <div class="card text-center"
+                                                                style="width: auto; display: inline-block;">
+                                                                <div class="card-body">
+                                                                    <div
+                                                                        class="d-flex justify-content-center align-items-center">
+                                                                        <h5 class="me-2 font-weight-bold">Total Revenue:
+                                                                        </h5><span class="fw-bold fs-5">$</span><span
+                                                                            id="totalRevenueDisplay"
+                                                                            class="fw-bold fs-5"></span>
+                                                                    </div>
+                                                                    <div
+                                                                        class="d-flex justify-content-center align-items-center">
+                                                                        <h5 class="me-2 font-weight-bold">Total CO2
+                                                                            Emissions:</h5>
+                                                                        <span id="totalCO2Display"
+                                                                            class="fw-bold fs-5"></span>
+                                                                        <!-- <span class="fw-bold fs-5"> mtCO2e</span> -->
+                                                                    </div>
+                                                                </div>
+                                                                >>>>>>> e9b481336c5b7b278041530e0b07f0210928812b
                                                             </div>
                                                         </div>
                                                     </div>
@@ -602,4 +671,7 @@
     </main>
     <footer <div class="bg-light" style="text-align: right; font-size: 0.8em;">
         <p class="text-secondary">© 2024 NYC Department of Citywide Administrative Services</p>
+        <<<<<<< HEAD </body>
+            =======
 </body>
+>>>>>>> e9b481336c5b7b278041530e0b07f0210928812b
